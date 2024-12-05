@@ -1,0 +1,8 @@
+.team_card .team_profil {
+  scale: 1;
+  transition: scale 0.4s ease-out;
+}
+
+.team_card:hover .team_profil {
+  scale: 1.1;
+}

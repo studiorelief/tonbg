@@ -1,0 +1,56 @@
+@import './utils/css/team.css';
+
+/* Button */
+
+.button_background-hover {
+  transition: opacity 0.25s ease-in-out;
+}
+
+.button:hover .button_background-hover {
+  opacity: 1;
+}
+
+/* Gradient border */
+
+.personalize_choice-perso.is-active .personalize_choice-border,
+.personalize_choice-weapon.is-active .personalize_choice-border {
+  border: 2px solid transparent;
+  border-image: linear-gradient(215deg, var(--base-color-brand--yellow), rgba(255, 255, 255, 0.25))
+    1;
+}
+
+.personalize_choice-perso:hover .personalize_choice-border,
+.personalize_choice-weapon:hover .personalize_choice-border {
+  border: 2px solid transparent;
+  border-image: linear-gradient(215deg, var(--base-color-brand--yellow), rgba(255, 255, 255, 0.25))
+    1;
+}
+
+.personalize_choice-perso .personalize_choice-border,
+.personalize_choice-weapon .personalize_choice-border {
+  border: 2px solid transparent;
+  border-image: linear-gradient(215deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)) 1;
+}
+
+.table_border,
+.claim_content,
+.footer_disclaimer,
+.team_card {
+  border: 2px solid transparent;
+  border-image: linear-gradient(
+      215deg,
+      var(--base-color-brand--yellow),
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.05)
+    )
+    1;
+}
+
+@media screen and (min-width: 125rem) {
+  .section_layer-high-screen,
+  .layer-high-screen_asset {
+    display: block;
+  }
+}

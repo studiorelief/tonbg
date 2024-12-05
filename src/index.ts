@@ -15,7 +15,9 @@ window.Webflow.push(() => {
   resetGlbPosition();
 
   // Animations
-  animGrid();
+  if (window.innerWidth > 479) {
+    animGrid();
+  }
   animCommunity();
   animClaim();
   animHeading();

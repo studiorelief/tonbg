@@ -11,11 +11,27 @@ export function animGrid() {
 
   if (!gridSection || !gridMain || !gridLogo) return;
 
-  gsap.to(gridMain, {
-    position: 'absolute',
+  gsap.to('.gsap-grid_column.is-2', {
+    position: 'relative',
     overflow: 'visible',
     zIndex: 1,
     width: '100vw',
+    // height: '100vh',
+    objectFit: 'cover',
+    ease: 'none',
+    scrollTrigger: {
+      markers: false,
+      trigger: gridSection,
+      start: '50% 100%',
+      end: '50% 25%',
+      scrub: true,
+    },
+  });
+
+  gsap.to(gridMain, {
+    position: 'relative',
+    overflow: 'visible',
+    zIndex: 1,
     height: '100vh',
     objectFit: 'cover',
     ease: 'none',
@@ -28,17 +44,6 @@ export function animGrid() {
     },
   });
 
-  //   gsap.to(gridSection, {
-  //     scale: 2.5,
-  //     ease: 'none',
-  //     scrollTrigger: {
-  //       markers: false,
-  //       trigger: gridSection,
-  //       start: '50% 100%',
-  //       end: '50% 25%',
-  //       scrub: true,
-  //     },
-  //   });
   gsap.set(gridLogo, {
     y: '-5rem',
   });
@@ -183,6 +188,47 @@ export function animHeading() {
         onEnter: () => {
           cryptingHeading(text);
         },
+      },
+    });
+  });
+}
+
+export function animHeroParallax() {
+  const heroVideo = document.querySelector('.hero-video');
+  const heroSection = document.querySelector('.section_hero');
+
+  if (!heroVideo || !heroSection) return;
+
+  gsap.to(heroVideo, {
+    y: '15rem',
+    opacity: 1,
+    scrollTrigger: {
+      markers: false,
+      trigger: heroSection,
+      start: '50% 50%',
+      end: '150% 0%',
+      scrub: true,
+    },
+  });
+}
+
+export function animHeadingParallax() {
+  const headingWrapper = document.querySelector('.is-gsap-parallax');
+
+  if (!headingWrapper) return;
+
+  const headingWrappers = document.querySelectorAll('.is-gsap-parallax');
+
+  headingWrappers.forEach((headingWrapper) => {
+    gsap.to(headingWrapper, {
+      y: '7.5rem',
+      opacity: 1,
+      scrollTrigger: {
+        markers: false,
+        trigger: headingWrapper,
+        start: '0% 100%',
+        end: '200% 0%',
+        scrub: true,
       },
     });
   });

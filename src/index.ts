@@ -1,7 +1,14 @@
 import './index.css';
 
 import { greetUser } from '$utils/global/greet';
-import { animClaim, animCommunity, animGrid, animHeading } from '$utils/global/gsap';
+import {
+  animClaim,
+  animCommunity,
+  animGrid,
+  animHeading,
+  animHeadingParallax,
+  animHeroParallax,
+} from '$utils/global/gsap';
 import { initPersonalizeChoice, updatePersonalizeAvatar } from '$utils/global/personalize';
 import { loadModelViewerScript, resetGlbPosition } from '$utils/script/modalviewer';
 
@@ -25,4 +32,10 @@ window.Webflow.push(() => {
   // Personalize
   initPersonalizeChoice();
   updatePersonalizeAvatar();
+
+  // Parallax
+  animHeroParallax();
+  if (window.innerWidth > 479) {
+    animHeadingParallax();
+  }
 });

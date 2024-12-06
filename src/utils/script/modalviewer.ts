@@ -43,4 +43,10 @@ export function resetGlbPosition() {
     modelViewer.addEventListener('mouseup', resetCameraOrbit);
     modelViewer.addEventListener('touchend', resetCameraOrbit);
   });
+
+  modelViewers.forEach((modelViewer) => {
+    modelViewer.setAttribute('min-camera-orbit', 'auto 90deg auto');
+    modelViewer.setAttribute('max-camera-orbit', 'auto 90deg auto');
+    modelViewer.setAttribute('disable-tap', '');
+  });
 }

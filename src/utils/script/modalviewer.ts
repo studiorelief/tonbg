@@ -10,7 +10,7 @@ export function loadModelViewerScript() {
 }
 
 export function resetGlbPosition() {
-  const modelViewers = document.querySelectorAll('#reveal') as NodeListOf<
+  const modelViewers = document.querySelectorAll('#claim-glb') as NodeListOf<
     HTMLElement & {
       cameraOrbit: string;
       returnToInitialPosition: number;
@@ -47,6 +47,22 @@ export function resetGlbPosition() {
   modelViewers.forEach((modelViewer) => {
     modelViewer.setAttribute('min-camera-orbit', 'auto 90deg auto');
     modelViewer.setAttribute('max-camera-orbit', 'auto 90deg auto');
+    modelViewer.setAttribute('disable-tap', '');
+  });
+}
+
+export function blockGlbPosition() {
+  const modelViewers = document.querySelectorAll('#footer-glb') as NodeListOf<
+    HTMLElement & {
+      cameraOrbit: string;
+      returnToInitialPosition: number;
+    }
+  >;
+  if (modelViewers.length === 0) return;
+
+  modelViewers.forEach((modelViewer) => {
+    modelViewer.setAttribute('min-camera-orbit', '-25deg 90deg auto');
+    modelViewer.setAttribute('max-camera-orbit', '25deg 90deg auto');
     modelViewer.setAttribute('disable-tap', '');
   });
 }

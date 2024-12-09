@@ -1,5 +1,6 @@
 import './index.css';
 
+// import { hoverComingSoon } from '$utils/global/coming-soon';
 import { greetUser } from '$utils/global/greet';
 import {
   animClaim,
@@ -10,8 +11,11 @@ import {
   animHeroParallax,
 } from '$utils/global/gsap';
 import { initPersonalizeChoice, updatePersonalizeAvatar } from '$utils/global/personalize';
-import { loadModelViewerScript, resetGlbPosition } from '$utils/script/modalviewer';
-
+import {
+  blockGlbPosition,
+  loadModelViewerScript,
+  resetGlbPosition,
+} from '$utils/script/modalviewer';
 window.Webflow ||= [];
 window.Webflow.push(() => {
   // Project
@@ -20,6 +24,7 @@ window.Webflow.push(() => {
   // 3D
   loadModelViewerScript();
   resetGlbPosition();
+  blockGlbPosition();
 
   // Animations
   if (window.innerWidth > 479) {
@@ -38,4 +43,7 @@ window.Webflow.push(() => {
   if (window.innerWidth > 479) {
     animHeadingParallax();
   }
+
+  // Coming soon
+  // hoverComingSoon();
 });

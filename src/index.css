@@ -23,6 +23,17 @@
   border-image: linear-gradient(215deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)) 1;
 }
 
+.scroll_video-wrapper {
+  border: 2px solid transparent;
+  border-image: linear-gradient(
+      215deg,
+      var(--base-color-brand--yellow),
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.25)
+    )
+    1;
+}
+
 .table_border,
 .claim_content,
 .footer_disclaimer,
